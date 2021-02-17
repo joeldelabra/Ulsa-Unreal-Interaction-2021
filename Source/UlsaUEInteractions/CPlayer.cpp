@@ -3,6 +3,10 @@
 
 #include "CPlayer.h"
 
+#include "UlsaUEInteractionsGameModeBase.h"
+#include "Engine/World.h"
+#include "Coin.h"
+
 // Sets default values
 ACPlayer::ACPlayer()
 {
@@ -53,6 +57,11 @@ void ACPlayer::OnOverlap(AActor* self, AActor* other) {
 
 	if (other->ActorHasTag("coin")) {
 
+		AUlsaUEInteractionsGameModeBase* gameMode = GetWorld()->GetAuthGameMode<AUlsaUEInteractionsGameModeBase>();
+
+		ACoin* coin{ Cast<ACoin>(other) };
+
+		gameMode->score += coin->GetPoints();
 		other->Destroy();
 
 	}

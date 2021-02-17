@@ -13,5 +13,8 @@ UCLASS()
 class ULSAUEINTERACTIONS_API AUlsaUEInteractionsGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+public:
+	int score{};
 	
 };

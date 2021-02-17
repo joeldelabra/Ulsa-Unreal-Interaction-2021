@@ -10,10 +10,13 @@ UCLASS()
 class ULSAUEINTERACTIONS_API ACoin : public AActor
 {
 	GENERATED_BODY()
+		UPROPERTY(EditAnywhere)
+		int points{};
 	
 public:	
 	// Sets default values for this actor's properties
 	ACoin();
+	int GetPoints();
 
 protected:
 	// Called when the game starts or when spawned

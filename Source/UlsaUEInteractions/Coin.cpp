@@ -25,3 +25,7 @@ void ACoin::Tick(float DeltaTime)
 
 }
 
+int ACoin::GetPoints() {
+	return points;
+}
+
